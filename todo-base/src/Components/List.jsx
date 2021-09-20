@@ -1,4 +1,10 @@
-const List = () => {
+import {useContext, useEffect} from "react";
+import Store from "../Store/Store";
+import { HOST_API } from "../Store/Store";
+
+
+
+export default function List () {
     const { dispatch, state: { todo } } = useContext(Store);
     const currentList = todo.list;
   

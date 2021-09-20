@@ -1,4 +1,9 @@
-const Form = () => {
+import {useContext, useRef, useState} from "react";
+import Store from "../Store/Store";
+import { HOST_API } from "../Store/Store";
+
+
+export default function Form () {
     const formRef = useRef(null);
     const { dispatch, state: { todo } } = useContext(Store);
     const item = todo.item;
@@ -66,4 +71,4 @@ const Form = () => {
       {item.id && <button onClick={onEdit}>Actualizar</button>}
       {!item.id && <button onClick={onAdd}>Crear</button>}
     </form>
-  }
+  } 
